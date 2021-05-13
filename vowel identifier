@@ -1,0 +1,5 @@
+string = input()
+string_list = ['a', 'e', 'i', 'o', 'u']
+for x in string_list:
+    if x in string:
+        print(x, end='')
