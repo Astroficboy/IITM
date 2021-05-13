@@ -1,0 +1,36 @@
+firstname = input()
+firstdate = input()
+secondname = input()
+seconddate = input()
+lexing = [firstname, secondname]
+
+if firstdate[6:]>seconddate[6:]:
+    print(firstname)
+    
+    
+elif firstdate[6:]==seconddate[6:]:
+    if firstdate[3:5]>seconddate[3:5]:
+        print(firstname)
+    else:
+        print(secondname)
+    
+        
+elif firstdate[6:]==seconddate[6:]:
+    if firstdate[3:5]==seconddate[3:5]:
+        if firstdate[0:2]>seconddate[0:2]:
+            print(firstname)
+        else:
+            print(secondname)
+
+            
+elif firstdate[0:]==seconddate[0:]:
+    sorting = sorted(lexing)
+    print(sorting[0])
+    
+elif firstdate[0:]==seconddate[0:]:
+    sorting = sorted(lexing)
+    if sorting[0]==sorting[1]:
+        print(sorting[0])
+    
+else:
+    print(secondname)
