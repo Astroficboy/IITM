@@ -1,0 +1,14 @@
+string = input()
+length = len(string)
+
+print(string[2])
+for i in range(2, length):
+    flag = False
+    for j in range(2, i):
+        if i%j==0:
+            flag = False
+            break
+        else:
+            flag = True
+    if flag:
+        print(string[i])
