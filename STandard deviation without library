@@ -1,0 +1,31 @@
+number = 0
+
+int_list = []
+
+
+
+while number!='END':
+    inpt = (input())
+    number = inpt
+    int_list.append(inpt)
+    if number == 'END':
+        break
+    
+
+
+int_list.remove('END')
+new_list = [int(i) for i in int_list]
+
+deviation_list = []       
+    
+for i in new_list:
+    mean = sum(new_list)/len(new_list)
+    deviation = i-mean
+    deviation_sq = deviation**2
+    deviation_list.append(deviation_sq)
+    sum_of_deviation_sq = sum(deviation_list)
+    std_deviation = (sum_of_deviation_sq/(len(new_list)-1))
+    sq_root = std_deviation**(1/2)
+    st_deviation = sq_root       
+print('{:.2f}'.format(st_deviation))
+    
