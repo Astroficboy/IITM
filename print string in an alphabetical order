@@ -1,0 +1,5 @@
+string = input()
+lowering = string.lower()
+sorting = sorted(lowering)
+for i in sorting:
+    print(i, end= '')
