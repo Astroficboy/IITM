@@ -1,0 +1,23 @@
+number = input()
+valid = True
+if len(number) == 10 and number.isdigit() == True and number[0] in '6789':
+    for digit_index in range(0,5):  
+        count = number.count(number[digit_index])
+        if count > 7:
+            valid = False
+        else:
+            if count > 5 : 
+                valid = False
+                for i in range(digit_index , digit_index + 6):
+                    if number[i] != number[i+1]:
+                        valid = True
+                        break                        
+            if valid == False:
+                break
+else:
+	valid = False 
+    
+if valid == True:
+	print("valid")
+else:
+	print("invalid")
