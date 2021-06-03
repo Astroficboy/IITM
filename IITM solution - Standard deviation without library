@@ -1,0 +1,11 @@
+S, l = 0, []
+x = input()
+while x != 'END':
+    l.append(float(x)) 
+    x = input()
+if len(l) > 1:
+    avg = sum(l) / len(l)
+    for i in l:
+        S += (i-avg)**2
+    SD = (S / (len(l)-1))**0.5
+    print(f'{SD:.2f}')
