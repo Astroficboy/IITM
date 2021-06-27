@@ -20,9 +20,3 @@ def binary_search(listofnumbers, numbertosearch):
     else:
         return 0
 
-import time
-import random
-a = time.time() 
-print(binary_search(((list(range(1, 100000000)))), 7))
-b = time.time()
-print('Time required: ', (b-a))
