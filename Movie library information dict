@@ -1,0 +1,49 @@
+lst = []
+avg = 0
+def add_movie_to_boxoffice(mov, new_mov):
+    mov.update({new_mov[0]:[new_mov[1]]})
+    return mov
+        
+def average_collection(mov):
+    global avg
+    for key, value in mov.items():
+        lst.append(value[0])
+    avg = (sum(lst)/len(lst))
+    return ('{:.2f}'.format(avg))
+
+def total_collection(mov):
+    global lst
+    for key, value in mov.items():
+        lst.append(value[0])
+    return sum(lst)
+
+def highest_grossing_movie_year(mov):
+    global lst
+    top = 0
+    year = 0
+    for key, value in mov.items():
+        lst.append(value[0])
+    for i in lst:
+        if i > top:
+            top = i
+    for key, value in mov.items():
+        if value[0] == top:
+            year = value[1]
+    return year
+    
+def num_of_movies_above_average_movies(mov):
+    above_avg = []
+    for key, value in mov.items():
+        if value[0] > avg:
+            above_avg.append(key)
+    return len(above_avg)
+
+# Suffix Code Block - start
+def suffix_block():
+    global movies_db
+    movies_db = add_movie_to_boxoffice(movies_db, new_movie)
+    print(total_collection(movies_db))
+    print(average_collection(movies_db))
+    print(num_of_movies_above_average_movies(movies_db))
+    print(highest_grossing_movie_year(movies_db))
+# Suffix Code Block - end
