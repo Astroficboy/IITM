@@ -1,0 +1,10 @@
+def read_file():    
+    table = []
+    data = open('somefile', 'r')
+    heading = data.readline().strip() #getting rid of the headers
+    line = data.readline()            #reading lines start from here and enters into the while loop
+    while line:
+        line = line.strip()
+        columns = line.split(',')
+        table.append(columns)
+        line = data.readline()
